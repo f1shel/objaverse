@@ -17,8 +17,9 @@ __version__ = "<REPLACE_WITH_VERSION>"
 _VERSIONED_PATH = os.path.join(BASE_PATH, "hf-objaverse-v1")
 
 def set_base_path(base_path: str = os.path.join(os.path.expanduser("~"), ".objaverse")) -> None:
-    global BASE_PATH
+    global BASE_PATH, _VERSIONED_PATH
     BASE_PATH = base_path
+    _VERSIONED_PATH = os.path.join(BASE_PATH, "hf-objaverse-v1")
 
 def load_annotations(uids: Optional[List[str]] = None) -> Dict[str, Any]:
     """Load the full metadata of all objects in the dataset.
